@@ -14,8 +14,8 @@ scores = {
 
 with open('input.txt') as f:
     games = f.read().split('\n')
-    for game in games:
-        my_score += scores[game]
+    my_score = sum([scores[game] for game in games])
+
 
 print(my_score)
 
