@@ -36,14 +36,9 @@ with open('input.txt') as f:
 
         for crate in range(no_of_crates):
             i = 0
-            if no_of_crates == 1:
-                crate_to_move = stacks[current_pos][0]
-                stacks[current_pos].pop(0)
-                stacks[destination_pos].insert(0, crate_to_move)
-            elif no_of_crates > i:
-                crates_to_move.append(stacks[current_pos][0])
-                stacks[current_pos].pop(0)
-                i += 1
+            crates_to_move.append(stacks[current_pos][0])
+            stacks[current_pos].pop(0)
+            i += 1
         if crates_to_move:
             stacks[destination_pos] = crates_to_move + stacks[destination_pos]
         crates_to_move = []
